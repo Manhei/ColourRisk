@@ -1,9 +1,5 @@
 package com.manhei.MHgame;
 
-import java.nio.channels.AlreadyConnectedException;
-
-import com.manhei.colourrisk.R;
-
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.content.Context;
@@ -83,7 +79,7 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback{
 				Paint paint = new Paint();
 				paint.setColor(Color.YELLOW);
 				paint.setTextSize(32);
-				canvas.drawText("FPS:" + realFPS, context.ScreenWidth/800f * 50, context.ScreenHeight/800f * 50, paint);
+				canvas.drawText("FPS:" + realFPS, context.ScreenWidth/800f * 50, context.ScreenHeight/480f * 50, paint);
 				if (curScreen != null) {
 					curScreen.draw(canvas);
 				}

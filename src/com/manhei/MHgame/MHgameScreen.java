@@ -7,6 +7,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.view.MotionEvent;
 
 public abstract class MHgameScreen {
 
@@ -24,6 +25,15 @@ public abstract class MHgameScreen {
 	
 	//»æÍ¼º¯Êı
 	public abstract void draw(Canvas canvas);
+	
+	//´¥ÃşÆÁ°´ÏÂ
+	public abstract void TouchDown(MotionEvent event);
+	
+	//´¥ÃşÆÁÌ§Æğ
+	public abstract void TouchUp(MotionEvent event);
+	
+	//´¥ÃşÆÁÒÆ¶¯
+	public abstract void TouchMove(MotionEvent event);
 	
 	//»æÖÆÍ¼Ïñ×ÊÔ´
 	public Bitmap loadBitmap(Context context, int id) {

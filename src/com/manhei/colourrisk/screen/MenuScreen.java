@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.view.MotionEvent;
 
 import com.manhei.MHgame.MHgameScreen;
 import com.manhei.colourrisk.MainActivity;
@@ -56,12 +57,12 @@ public class MenuScreen extends MHgameScreen {
 		
 		canvas.drawBitmap(bitmap,
 				x, y, paint);
-		canvas.drawBitmap(bitmap,
-				x1, y1, paint);
-		canvas.drawBitmap(bitmap,
-				x2, y2, paint);
-		canvas.drawBitmap(bitmap,
-				x3, y3, paint);
+//		canvas.drawBitmap(bitmap,
+//				x1, y1, paint);
+//		canvas.drawBitmap(bitmap,
+//				x2, y2, paint);
+//		canvas.drawBitmap(bitmap,
+//				x3, y3, paint);
 	}
 
 	@Override
@@ -91,5 +92,22 @@ public class MenuScreen extends MHgameScreen {
 			x3+=1;
 		}
 	}
+
+	@Override
+	public void TouchDown(MotionEvent event) {
+
+	}
+
+	@Override
+	public void TouchUp(MotionEvent event) {
+
+	}
+
+	@Override
+	public void TouchMove(MotionEvent event) {
+		x = (int) event.getX();
+		y = (int) event.getY();
+	}
+
 
 }

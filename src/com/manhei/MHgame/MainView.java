@@ -45,6 +45,10 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback{
 		curScreen.load();
 		curScreen.loaded();
 	}
+	
+	public MHgameScreen getCurScreen() {
+		return curScreen;
+	}
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
@@ -76,13 +80,14 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback{
 			canvas.drawColor(Color.BLACK);
 			//»æ»­FPS
 			if (context.isFPSShow) {
+				
+				if (curScreen != null) {
+					curScreen.draw(canvas);
+				}
 				Paint paint = new Paint();
 				paint.setColor(Color.YELLOW);
 				paint.setTextSize(32);
 				canvas.drawText("FPS:" + realFPS, context.ScreenWidth/800f * 50, context.ScreenHeight/480f * 50, paint);
-				if (curScreen != null) {
-					curScreen.draw(canvas);
-				}
 			}
 			/*****  ½áÊø»æÍ¼  *****/
 		}

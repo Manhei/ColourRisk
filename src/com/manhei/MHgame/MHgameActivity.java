@@ -7,6 +7,7 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.util.Log;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -141,4 +142,19 @@ public abstract class MHgameActivity extends Activity{
 	public void setScreen(MHgameScreen screen) {
 		mainView.setScreen(screen);
 	}
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		if (event.getAction() == MotionEvent.ACTION_DOWN) {
+			mainView.getCurScreen().TouchDown(event);
+		}
+		else if (event.getAction() == MotionEvent.ACTION_UP) {
+			mainView.getCurScreen().TouchUp(event);
+		}
+		else if (event.getAction() == MotionEvent.ACTION_MOVE) {
+			mainView.getCurScreen().TouchMove(event);
+		}
+		return true;
+	}
+	
+	
 }

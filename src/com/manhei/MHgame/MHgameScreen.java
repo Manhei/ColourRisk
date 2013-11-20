@@ -1,8 +1,5 @@
 package com.manhei.MHgame;
 
-import com.manhei.colourrisk.MainActivity;
-import com.manhei.colourrisk.R;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;

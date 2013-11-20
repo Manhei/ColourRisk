@@ -70,6 +70,13 @@ public abstract class MHgameActivity extends Activity{
 		requestWindowFeature(Window.FEATURE_NO_TITLE);//隐藏标题
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 		  WindowManager.LayoutParams.FLAG_FULLSCREEN);//设置全屏
+		
+		//获取屏幕实际宽高
+				WindowManager windowManager = getWindowManager();
+				Display display = windowManager.getDefaultDisplay();
+				ScreenWidth = display.getWidth();
+				ScreenHeight = display.getHeight();
+				Log.i(TAG, "Screen Width is " + ScreenWidth + " \nScreen Height is " + ScreenHeight);
 
 		this.wakeLock = ((PowerManager)getSystemService(POWER_SERVICE)).
 				newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE, "MHgameActivity");
@@ -103,12 +110,7 @@ public abstract class MHgameActivity extends Activity{
 				  setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 				 }		
 		}
-		//获取屏幕实际宽高
-		WindowManager windowManager = getWindowManager();
-		Display display = windowManager.getDefaultDisplay();
-		ScreenWidth = display.getWidth();
-		ScreenHeight = display.getHeight();
-		Log.i(TAG, "Screen Width is " + ScreenWidth + " \nScreen Height is " + ScreenHeight);
+		
 		
 		//绑定游戏view
 		setContentView(mainView);

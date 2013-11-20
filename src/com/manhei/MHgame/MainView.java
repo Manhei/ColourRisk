@@ -159,7 +159,9 @@ public class MainView extends SurfaceView implements SurfaceHolder.Callback{
 		}
 
 		private void logic() {
-			curScreen.logic();
+			if (curScreen != null) {
+				curScreen.logic();
+			}
 		}
 		
 	}

@@ -7,8 +7,7 @@ public class MainActivity extends MHgameActivity {
 	public static MainActivity instance;
 	@Override
 	public void OnLoad() {
-		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override

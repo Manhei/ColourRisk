@@ -1,0 +1,1 @@
+package com.manhei.MHgame;public abstract class MHgamePopwindow {	}
